@@ -1,19 +1,18 @@
 #include "Matrix.h"
 
-
 using namespace std;
 
 Matrix2by2::Matrix2by2()
 {
     isPrintable = true;
-    for(short i=0;i<9;i++)
+    for (short i = 0; i < 9; i++)
     {
-        q[i]=0;
-        p[i]=0;
+        q[i] = 0;
+        p[i] = 0;
     }
-    for(short i = 0; i < 3; i++)
+    for (short i = 0; i < 3; i++)
     {
-        for(short j = 0; j < 3; j++)
+        for (short j = 0; j < 3; j++)
         {
             r[i][j] = 0;
         }
@@ -25,7 +24,7 @@ Matrix2by2::~Matrix2by2()
 }
 Matrix2by2::Matrix2by2(float* q)
 {
-    this->isPrintable = isPrintable;
+    //this->isPrintable = isPrintable;
     for (short i = 0; i < 4; i++)
     {
         this->q[i] = q[i];
@@ -34,15 +33,31 @@ Matrix2by2::Matrix2by2(float* q)
 
 void Matrix2by2::setMatrix()
 {
-   cout<<"Enter the 2 by 2 matrix horizontally\n";
-    for(short i = 0; i < 4; i++)
-    {
-        cin >> q[i];
-    }
+    cout << "Enter the 2 by 2 matrix\n";
+    short counter = 0;
+    do {
+        for (short i = 0; i < 4; i++)
+        {
+            if(!(cin >> q[i]))
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "You can only enter floating numbers, please enter the matrix again\n";
+                counter = 0;
+            }
+            else
+            {
+                counter++;
+            }
+        }
+    } while (counter < 4);
+    /*
+    
+    */
 }
 void Matrix2by2::getMatrix()
 {
-    if (isPrintable == false)
+    if (!isPrintable)
     {
         return;
     }
@@ -50,7 +65,7 @@ void Matrix2by2::getMatrix()
     {
         cout << q[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
 
     for (short i = 2; i < 4; i++)
     {
@@ -85,6 +100,7 @@ Matrix2by2 Matrix2by2::operator+(Matrix2by2 M)
         p[i] = this->q[i] + M.q[i];
     }
    M = p;
+   M.isPrintable = true;
    return M;
 }
 Matrix2by2 Matrix2by2::operator*(Matrix2by2 M)
@@ -101,11 +117,13 @@ Matrix2by2 Matrix2by2::operator*(Matrix2by2 M)
     p[2] = r[2][0];
     p[3] = r[2][1];
     M = p;
+    M.isPrintable = true;
     return M;
 }
 
 Matrix3by3::Matrix3by3()
 {
+    isPrintable = true;
     for (short i = 0; i < 9; i++)
     {
         q[i] = 0;
@@ -122,17 +140,40 @@ Matrix3by3::Matrix3by3(float* q)
         this->q[i] = q[i];
     }
 }
-float* Matrix3by3::setMatrix()
+void Matrix3by3::setMatrix()
 {
-    cout << "Enter the 3 by 3 matrix horizontally\n";
+    cout << "Enter the 3 by 3 matrix\n";
+    short counter = 0;
+    do {
+        for (short i = 0; i < 9; i++)
+        {
+            if(!(cin >> q[i]))
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "You can only enter floating numbers, please enter the matrix again\n";
+                counter = 0;
+            }
+            else
+            {
+                counter++;
+            }
+        }
+    } while (counter < 9);
+    
+    /*
     for (short i = 0; i < 9; i++)
     {
         cin >> q[i];
     }
-    return q;
+    */
 }
-float* Matrix3by3::getMatrix()
+void Matrix3by3::getMatrix()
 {
+    if (!isPrintable)
+    {
+        return;
+    }
     for (short i = 0; i < 3; i++)
     {
         cout << q[i] << " ";
@@ -140,16 +181,14 @@ float* Matrix3by3::getMatrix()
     cout << endl;
     for (short i = 3; i < 6; i++)
     {
-        cout<<q[i]<<" ";
+        cout << q[i] << " ";
     }
     cout << endl;
     for (short i = 6; i < 9; i++)
     {
-        cout<<q[i]<<" ";
+        cout << q[i] << " ";
     }
     cout << endl;
-    return q;
-
 }
 Matrix3by3 Matrix3by3::operator+(Matrix3by3 M)
 {
@@ -158,6 +197,7 @@ Matrix3by3 Matrix3by3::operator+(Matrix3by3 M)
        p[i] = this->q[i] + M.q[i];
    }
    M = p;
+   M.isPrintable = true;
    return M;
 }
 
@@ -177,6 +217,7 @@ Matrix3by3 Matrix3by3::operator*(Matrix3by3 M)
         p[k] = r[k-6][2];
     }
     M = p;
+    M.isPrintable = true;
     return M;
 }
 float* Matrix3by3::invertMatrix()
@@ -193,12 +234,13 @@ float* Matrix3by3::invertMatrix()
         p[2] = (q[1] * q[5] - q[2] * q[4]) / det;
         p[5] = (q[2] * q[3] - q[0] * q[5]) / det;
         p[8] = (q[0] * q[4] - q[1] * q[3]) / det;
-        }
+    }
     else
     {
         cout << "The matrix is not invertible" << endl;
+        isPrintable = false;
     }
     Matrix3by3 N = p;
+    N.isPrintable = true;
     return p;
 }
-

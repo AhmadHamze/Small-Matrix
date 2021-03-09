@@ -2,7 +2,6 @@
 #define MATRIX_H_INCLUDED
 #include <iostream>
 #include <limits>
-#include <cstdlib>
 #include <string.h>
 
 class Matrix2by2
@@ -15,9 +14,10 @@ public:
     Matrix2by2();
     virtual ~Matrix2by2();
     Matrix2by2(float*);//Convert constructor.
-    float*setMatrix();
-    float*getMatrix();
-    float*invertMatrix();
+    void setMatrix();
+    void getMatrix();
+    float* invertMatrix();
+    bool isPrintable;
     Matrix2by2 operator+(Matrix2by2);
     Matrix2by2 operator*(Matrix2by2);
 

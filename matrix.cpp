@@ -18,13 +18,15 @@ Matrix2by2::Matrix2by2()
         }
     }
 }
+
+// Adding the destructor in case it would be needed
 Matrix2by2::~Matrix2by2()
 {
 
 }
+
 Matrix2by2::Matrix2by2(float* q)
 {
-    //this->isPrintable = isPrintable;
     for (short i = 0; i < 4; i++)
     {
         this->q[i] = q[i];
@@ -51,10 +53,10 @@ void Matrix2by2::setMatrix()
             }
         }
     } while (counter < 4);
-    /*
-    
-    */
+    // Ignore any additional numbers that the user might input by mistake
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
+
 void Matrix2by2::getMatrix()
 {
     if (!isPrintable)
@@ -73,6 +75,7 @@ void Matrix2by2::getMatrix()
     }
     cout << endl;
 }
+
 float* Matrix2by2::invertMatrix()
 {
     float tmp = q[0] * q[3] - q[2] * q[1];
@@ -93,6 +96,8 @@ float* Matrix2by2::invertMatrix()
     return p;
 
 }
+
+// Overloading the '+' operator to add two by two matrices
 Matrix2by2 Matrix2by2::operator+(Matrix2by2 M)
 {
     for (short i = 0; i < 4; i++)
@@ -103,6 +108,8 @@ Matrix2by2 Matrix2by2::operator+(Matrix2by2 M)
    M.isPrintable = true;
    return M;
 }
+
+// Overloading the '*' operator to multiply two by two matrices
 Matrix2by2 Matrix2by2::operator*(Matrix2by2 M)
 {
     for (short i = 0; i < 4; i += 2)
@@ -121,18 +128,17 @@ Matrix2by2 Matrix2by2::operator*(Matrix2by2 M)
     return M;
 }
 
+// This constructor is inheriting the Matrix2by2 constructor, no need to do anything
 Matrix3by3::Matrix3by3()
 {
-    isPrintable = true;
-    for (short i = 0; i < 9; i++)
-    {
-        q[i] = 0;
-    }
+
 }
+
 Matrix3by3::~Matrix3by3()
 {
 
 }
+
 Matrix3by3::Matrix3by3(float* q)
 {
     for (short i = 0; i < 9; i++)
@@ -140,6 +146,7 @@ Matrix3by3::Matrix3by3(float* q)
         this->q[i] = q[i];
     }
 }
+
 void Matrix3by3::setMatrix()
 {
     cout << "Enter the 3 by 3 matrix\n";
@@ -160,14 +167,11 @@ void Matrix3by3::setMatrix()
             }
         }
     } while (counter < 9);
+    // Ignore any additional numbers that the user might input by mistake
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     
-    /*
-    for (short i = 0; i < 9; i++)
-    {
-        cin >> q[i];
-    }
-    */
 }
+
 void Matrix3by3::getMatrix()
 {
     if (!isPrintable)
@@ -190,6 +194,7 @@ void Matrix3by3::getMatrix()
     }
     cout << endl;
 }
+
 Matrix3by3 Matrix3by3::operator+(Matrix3by3 M)
 {
    for (short i = 0; i < 9; i++)
@@ -220,6 +225,7 @@ Matrix3by3 Matrix3by3::operator*(Matrix3by3 M)
     M.isPrintable = true;
     return M;
 }
+
 float* Matrix3by3::invertMatrix()
 {
     float det = q[0] * (q[4] * q[8] - q[5] * q[7]) - q[1] * (q[3] * q[8] - q[5] * q[6]) + q[2] * (q[3] * q[7] - q[4] * q[6]);

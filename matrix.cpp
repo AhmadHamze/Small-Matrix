@@ -46,6 +46,7 @@ void Matrix2by2::setMatrix()
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "You can only enter floating numbers, please enter the matrix again\n";
                 counter = 0;
+                break;
             }
             else
             {
@@ -160,6 +161,7 @@ void Matrix3by3::setMatrix()
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "You can only enter floating numbers, please enter the matrix again\n";
                 counter = 0;
+                break;
             }
             else
             {

@@ -27,10 +27,7 @@ You have to simply enter the number associated to begin (type the number then cl
 
 #### Adding and Multiplying Two Matrices
 
-We want to add and multiply $\begin{pmatrix}
-1 & 2\\
-3 & 4
-\end{pmatrix}$ and $\begin{pmatrix}
+<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2\\&space;3&space;&&space;4&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}" /> and $\begin{pmatrix}
 2 & 1\\
 0 & 4
 \end{pmatrix}$ in this order, therefore we choose number 2.

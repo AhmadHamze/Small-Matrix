@@ -39,6 +39,7 @@ As you can see the program is asking to enter the two by two matrix, doing so is
 You can simply enter the matrix like so: 
 
 1 2
+
 3 4
 
 after you're done click enter.

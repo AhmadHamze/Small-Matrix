@@ -27,10 +27,11 @@ You have to simply enter the number associated to begin (type the number then cl
 
 #### Adding and Multiplying Two Matrices
 
-<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2\\&space;3&space;&&space;4&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}" /> and $\begin{pmatrix}
-2 & 1\\
-0 & 4
-\end{pmatrix}$ in this order, therefore we choose number 2.
+We want to have the sum and multiplication of these two matrices:
+
+<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2\\&space;3&space;&&space;4&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2\\ 3 & 4 \end{pmatrix}" /> and <img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;2&space;&&space;1\\&space;0&space;&&space;4&space;\end{pmatrix}" title="\begin{pmatrix} 2 & 1\\ 0 & 4 \end{pmatrix}" />.
+
+Therefore we choose number 2.
 
 ![Enter 2](./images/select-2.png)
 
@@ -66,11 +67,9 @@ Adding and multiplying two three by three matrices is quite similar.
 
 #### Inverse of a Three By Three Matrix
 
-Let's see how to get the inverse of a three by three matrix, we want the inverse of $\begin{pmatrix}
-1 & 2 & 1\\
-0 & 1 & 2\\
-2 & 3 & 1
-\end{pmatrix}$.<br>
+Let's see how to get the inverse of a three by three matrix, we want the inverse of
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2&space;&&space;1\\&space;0&space;&&space;1&space;&&space;2\\&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2 & 1\\ 0 & 1 & 2\\ 2 & 3 & 1 \end{pmatrix}" /></p>
 First, we choose the option number 3, then we enter the matrix.
 
 ![Three By Three](./images/three-inverse.png)
@@ -79,11 +78,9 @@ Once you click enter after typing the last number, you get the result
 
 ![Inverse result](./images/inverse-result.png)
 
-Let's see what happens when we have a noninvertible matrix $\begin{pmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
-7 & 8 & 9
-\end{pmatrix}$.
+Let's see what happens when we have a noninvertible matrix
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2&space;&&space;1\\&space;0&space;&&space;1&space;&&space;2\\&space;2&space;&&space;3&space;&&space;1&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2 & 1\\ 0 & 1 & 2\\ 2 & 3 & 1 \end{pmatrix}" /></p>
 
 ![Non invertible](./images/noninvertibal.png)
 
@@ -93,15 +90,9 @@ The sentence "The matrix is not invertible" is printed and you can continue by e
 
 This application will prompt the user in case a wrong input is provided.
 
-Suppose we want to know the sum and product of $\begin{pmatrix}
-1 & 2 & 3\\
-4 & 5 & 6\\
-7 & 8 & 9
-\end{pmatrix}$ and $\begin{pmatrix}
-0 & 0 & 1\\
-2 & 1 & 3\\
-1 & 1 & 0.5
-\end{pmatrix}$.
+Suppose we want to know the sum and product of 
+
+<img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;1&space;&&space;2&space;&&space;3\\&space;4&space;&&space;5&space;&&space;6\\&space;7&space;&&space;8&space;&&space;9&space;\end{pmatrix}" title="\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}" /> and <img src="https://latex.codecogs.com/gif.latex?\begin{pmatrix}&space;0&space;&&space;0&space;&&space;1\\&space;2&space;&&space;1&space;&&space;3\\&space;1&space;&&space;1&space;&&space;0.5&space;\end{pmatrix}" title="\begin{pmatrix} 0 & 0 & 1\\ 2 & 1 & 3\\ 1 & 1 & 0.5 \end{pmatrix}" />
 
 However, when entering the values the user makes a typo and enters the letter "s" insted of 0.5.
 
